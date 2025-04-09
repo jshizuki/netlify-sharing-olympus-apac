@@ -1,5 +1,5 @@
 export default (request) => {
-  const blockedIps = Deno.env.development.get("BLOCKED_IPS")?.split(',') || [];
+  const blockedIps = Deno.env.get("BLOCKED_IPS")?.split(',') || [];
 
   // Get the user IP address
   const ipAddress = request.headers.get("x-forwarded-for");
